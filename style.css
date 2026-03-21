@@ -1,0 +1,126 @@
+body {
+    background-color: #f4e7d3; /* Цвет старой бумаги */
+    font-family: 'Courier New', Courier, monospace; /* Шрифт как на печатной машинке */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin: 0;
+}
+
+/* 2. ЗАГОЛОВОК: ОГРОМНЫЙ, ПО ЦЕНТРУ, В ДВОЙНОЙ РАМКЕ */
+.main-title {
+    font-size: 80px;
+    font-weight: 900;
+    color: #2c1e13;
+    text-transform: uppercase;
+    border: 10px double #412c1c; /* Двойная рамка */
+    padding: 20px 100px;
+    background: #fff;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* 3. СЕТКА (Чтобы карты шли в ряд по 3-4 штуки) */
+.deck-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* 4. КАРТОЧКА: ОБЩИЙ ВИД */
+.card {
+    border: 5px solid #2c1e13;
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 0px #2c1e13;
+    min-height: 400px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Эффект при наведении */
+}
+
+/* 5. ВНУТРЕННИЕ БЛОКИ: КАЖДЫЙ В СВОЕЙ РАМКЕ */
+.card-header, .card-desc, .card-stats {
+    border: 2px solid #2c1e13; /* Рамка для каждого элемента внутри */
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-header {
+    background: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+.card-desc {
+    flex-grow: 1; /* Чтобы описание занимало всё свободное место */
+    background: #fff;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.4;
+    overflow-y: auto; /* Если текста слишком много, появится прокрутка */
+}
+
+.card-stats {
+    background: #fdf5e6;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+/* 6. ЦВЕТОВЫЕ РАЗЛИЧИЯ (АКЦЕНТЫ НА РАМКИ) */
+.monster { border-color: #8b0000; box-shadow: 10px 10px 0px #8b0000; }
+.monster .card-stats { color: #8b0000; }
+
+.item { border-color: #b8860b; box-shadow: 10px 10px 0px #b8860b; }
+.item .card-stats { color: #b8860b; }
+
+.curse { border-color: #4b0082; box-shadow: 10px 10px 0px #4b0082; }
+
+.race { border-color: #556b2f; box-shadow: 10px 10px 0px #556b2f; }
+.race .card-stats { background: #f0fff0; color: #228b22; }
+
+.class-card { border-color: #704214; box-shadow: 10px 10px 0px #704214; }
+.class-card .card-stats { background: #fff5ee; color: #8b4513; }
+
+/* 7. КНОПКИ УПРАВЛЕНИЯ */
+.controls {
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: bold;
+    background: #2c1e13;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Кнопка удаления внутри карты */
+.card button {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    background: #ff4d4d;
+}
+
+
