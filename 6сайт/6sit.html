@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MyWish — Лабораторная №6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌸 MyWish</div>
+            <div class="nav-links">
+                <button onclick="showSection('hero')">Главная (GET)</button>
+                <button onclick="showSection('manage')">Действия (POST/PATCH)</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="api-section">
+            <div class="center-content">
+                <h1>Что такое вишлист?</h1>
+                <p class="description">Это список желаний. Делись им с друзьями, чтобы они точно знали, что тебе подарить.</p>
+                
+                <div id="catalog-loader" class="loader">Ищем идеи для вас...</div>
+                <div id="catalog-grid" class="grid"></div>
+            </div>
+        </section>
+
+        <section id="manage" class="api-section" style="display:none;">
+            <div class="glass-card">
+                <h2>Управление списком</h2>
+                <input type="text" id="wish-input" placeholder="Введите мечту...">
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="postWish()">Добавить (POST)</button>
+                    <button class="btn-outline" onclick="patchData()">Изменить (PATCH)</button>
+                </div>
+                <p id="post-status"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="kod.js"></script>
+</body>
+</html>
+
+
