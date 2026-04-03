@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Wishlist ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button onclick="router('about')">Главная</button>
+            <button onclick="router('ideas')">Идеи</button>
+            <button onclick="router('my-list')">Мой Список</button>
+            <button onclick="router('friends')">Друзья</button>
+        </nav>
+    </header>
+
+    <!-- Обязательная заглушка из задания -->
+    <div id="loader" class="hidden">💖 Идет запрос к API...</div>
+
+    <main id="content">
+        <!-- Секция "Главная" -->
+        <section id="about">
+            <article class="hero">
+                <h1>Что такое Вишлист?</h1>
+                <p><strong>Вишлист (Wishlist)</strong> — это персональный список мечтаний. Ответ прост: это удобный способ собрать все свои желания в одном месте, чтобы упростить выбор подарка себе и своим близким!</p>
+            </article>
+        </section>
+
+        <section id="ideas" class="hidden">
+            <h2 class="title">Популярные идеи (GET)</h2>
+            <ul id="ideas-list" class="grid"></ul>
+        </section>
+
+        <section id="my-list" class="hidden">
+            <h2 class="title">Мой список желаний (POST/PUT/DELETE)</h2>
+            <form class="wish-form" id="wish-form">
+                <input type="text" id="new-wish" placeholder="Напиши мечту..." required>
+                <button type="submit">Добавить</button>
+            </form>
+            <ul id="wish-list-container" class="grid"></ul>
+        </section>
+
+        <section id="friends" class="hidden">
+            <h2 class="title">Активность друзей (API 3)</h2>
+            <ul id="friends-list" class="grid"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
